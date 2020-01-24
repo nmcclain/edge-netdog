@@ -1,0 +1,14 @@
+---
+global:
+    debug: true
+    monitor_interval: 30s
+    target_attempts: 4
+    action_delay: 30s
+    target_url: https://example.com
+    target_match: Example Domain
+
+actions:
+    - sudo wpa_cli -i wlan0 reconfigure
+    - sudo dhclient -v
+    - sudo service networking restart
+    - sudo reboot
